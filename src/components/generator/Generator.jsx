@@ -2,27 +2,32 @@ import { useState } from "react"
 import QRCode from 'react-qr-code'
 
 export const Generator = () => {
-  const [userInput, setUserInput] = useState("")
-  const [QrCode, setQrCode] = useState("")
+  const [formData, setFormData] = useState("")
+  const [qrCode, setQrCode] = useState("")
 
-  const generateQrCode = (e) =>{
+  const handleSubmit = (e) =>{
     e.preventDefault()
-    setQrCode(userInput)
+    setQrCode(formData)
   }
 
+  const handleChange = (e) => {
+    setFormData(e.target.value)
+  } 
+  
+
   return (
-    <section>
-      <form onSubmit={ generateQrCode }>
-        <input 
+    <section className="generator__section">
+      <form onSubmit={ handleSubmit } className="generator__section--form">
+        <textarea
+        className="generator__section--form-textarea" 
         type="text"
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)} 
+        value={formData}
+        cols='20'
+        onChange={ handleChange } 
         />
-        <button type="submit">GENERATE</button>
+        <button type="submit" className="generator__section--form-submit">GENERATE</button>
       </form>
-      { QrCode ?
-      <QRCode value={QrCode} />
-      : '' }
+      {qrCode && <QRCode value={qrCode} />}
     </section>
   )
 }

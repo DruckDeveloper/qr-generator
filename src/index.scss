@@ -1,0 +1,9 @@
+// Import variables
+@import './styles/variables.scss';
+//Import style mixins 
+@import './styles/mixins.scss'
+
+
+// Import component styles
+@use './components/header/Header.scss'; 
+@use './components/generator/Generator.scss'; 
