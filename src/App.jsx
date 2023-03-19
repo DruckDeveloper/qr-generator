@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import { Header } from './components/header/Header'
-import { Generator } from './components/generator/Generator'
+// Import pages
+import { Generator } from './pages/generator/Generator'
+import { Scanner } from './pages/scaner/Scanner'
 
-
-function App() {
+function App () {
   return (
     <>
       <Header />
-      <Generator /> 
+      <Routes>
+        <Route element={<Generator />} path='/' />
+        <Route element={<Scanner />} path='/scanner' />
+      </Routes>
     </>
   )
 }

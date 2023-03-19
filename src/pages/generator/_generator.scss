@@ -1,0 +1,17 @@
+@import '../../styles/mixins';
+
+.generator {
+  width: 80%;
+  @include flex-full-center();
+  flex-direction: column;
+
+  &__form {
+    @include flex-full-center();
+    flex-direction: column;
+
+    &--textarea {
+      width: 40%;
+      resize: none;
+    }
+  }
+}

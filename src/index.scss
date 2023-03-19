@@ -1,9 +1,7 @@
-// Import variables
-@import './styles/variables.scss';
-//Import style mixins 
-@import './styles/mixins.scss'
+@use './styles/reset';
+@use './styles/fonts';
 
-
-// Import component styles
-@use './components/header/Header.scss'; 
-@use './components/generator/Generator.scss'; 
+@use './app';
+@use './components/header/Header';
+@use './pages/generator/generator';
+@use './pages/scaner/scaner';
