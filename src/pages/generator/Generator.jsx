@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import QRCode from 'react-qr-code'
+import { QRCodeCanvas } from 'qrcode.react'
 
 export const Generator = () => {
   const [formData, setFormData] = useState('')
@@ -16,14 +16,14 @@ export const Generator = () => {
   }
 
   const handleDownload = () => {
-    const canvas = useRef
+    const canvas = document.querySelector('canvas')
     const pngUrl = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
     setDownloadURL(pngUrl)
   }
 
   return (
     <section className='generator'>
-      {qrCode && <QRCode value={qrCode} />}
+      {qrCode && <QRCodeCanvas value={qrCode} size={200} />}
       <form onSubmit={handleSubmit} className='generator__form'>
         <textarea
           className='generator__form--textarea'
