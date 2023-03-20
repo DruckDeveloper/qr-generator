@@ -6,13 +6,13 @@ import { Scanner } from './pages/scaner/Scanner'
 
 function App () {
   return (
-    <>
+    <div className='App'>
       <Header />
       <Routes>
         <Route element={<Generator />} path='/' />
         <Route element={<Scanner />} path='/scanner' />
       </Routes>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 3em 0;
+
+  &__title {
+    font-size: 3em;
+    color: $primary-color;
+  }
+
+  &__text {
+    font-size: 2em;
+    color: $secundary-color;
+  }
+
+  &__nav {
+    padding: .5em;
+
+    &--link {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+      color: $secundary-color;
+      transition: .4s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

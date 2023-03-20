@@ -4,6 +4,7 @@ import QRCode from 'react-qr-code'
 export const Generator = () => {
   const [formData, setFormData] = useState('')
   const [qrCode, setQrCode] = useState('')
+  const [downloadURL, setDownloadURL] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -12,6 +13,12 @@ export const Generator = () => {
 
   const handleChange = (e) => {
     setFormData(e.target.value)
+  }
+
+  const handleDownload = () => {
+    const canvas = useRef
+    const pngUrl = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+    setDownloadURL(pngUrl)
   }
 
   return (
@@ -26,6 +33,7 @@ export const Generator = () => {
           onChange={handleChange}
         />
         <button type='submit' className='generator__form--submit'>GENERATE</button>
+        {qrCode && <a href={downloadURL} download='qrcode.png' onClick={handleDownload}>Download</a>}
       </form>
     </section>
   )
